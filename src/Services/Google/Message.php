@@ -11,6 +11,7 @@ class Message implements Interfaces\MessageInterface{
     public $title;
     public $message;
     public $token;
+    public $service = "Google";
     
     public function setToken($token){
         $this->token = $token;

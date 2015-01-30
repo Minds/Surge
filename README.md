@@ -29,9 +29,7 @@ Ok, this is a bit of a pain. Follow carefully.
 
 Then your app should be able to do the rest..
 
-An example call:
 
-```
-$apple = Surge\Service\Factory::build('Apple', array('cert'=>'/var/secure/apple.pem'));
+### Configure Google Push Notifications (GPN)
 
-```
+Google makes things easier, all you need is an API key. Go to https://console.developers.google.com/ and enable Push Notifictions.
