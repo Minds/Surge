@@ -12,6 +12,7 @@ class Message implements Interfaces\MessageInterface{
     public $message;
     public $token;
     public $service = "Google";
+    public $uri;
     
     public function setToken($token){
         $this->token = $token;
@@ -27,6 +28,11 @@ class Message implements Interfaces\MessageInterface{
         $this->message = $message;
         return $this;
     }
+
+    public function setURI($uri){
+        $this->uri = $uri;
+        return $this;
+    }
     
     public function toJSON(){
         $payload = array(
@@ -34,7 +40,8 @@ class Message implements Interfaces\MessageInterface{
                 'message' =>  $this->message,
                 'title' => $this->title,
                 'sound'=>1,
-                'vibrate'=>1
+                'vibrate'=>1,
+                'uri' => $this->uri
             ),
             'registration_ids' => array($this->token)
         );

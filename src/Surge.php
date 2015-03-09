@@ -24,7 +24,9 @@ class Surge{
         
         if(!$config instanceof Config)
             throw new InvalidParameter('$config must be of type Config');
-        
+
+        if($message->service == 'android')
+                $message->service = 'Google';        
         Services\Factory::build($message->service, $config->config[$message->service])
             ->sendMessage($message);
     }

@@ -17,6 +17,8 @@ class Factory implements Components\Interfaces\FactoryInterface{
         //read the token
         $data = Token::read($token);
         $service = ucfirst($data['service']);
+        if($service == 'Android')
+            $service = 'Google';
 
         $classname = "\\Surge\\Services\\$service\\Message";
         if(class_exists($classname)){
