@@ -41,7 +41,8 @@ class Message implements Interfaces\MessageInterface{
                 'title' => $this->title,
                 'sound'=>1,
                 'vibrate'=>1,
-                'uri' => $this->uri
+                'uri' => $this->uri,
+                'notId' => time()
             ),
             'registration_ids' => array($this->token)
         );
