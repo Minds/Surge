@@ -33,7 +33,11 @@ class Message implements Interfaces\MessageInterface{
         $this->uri = $uri;
         return $this;
     }
-    
+
+    public function setSound($sound){
+        return $this;
+    }
+
     public function toJSON(){
         $payload = array(
             'data' => array(
