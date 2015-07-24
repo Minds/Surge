@@ -13,6 +13,7 @@ class Message implements Interfaces\MessageInterface{
     public $token;
     public $service = "Apple";
     public $uri = "chat";
+    public $sound = "default";
     
     public function setToken($token){
         $this->token = $token;
@@ -34,6 +35,11 @@ class Message implements Interfaces\MessageInterface{
         return $this;
     }
     
+    public function setSound($sound){
+        $this->sound = $sound;
+        return $this;
+    }
+    
     public function toJSON(){
         $payload = array(
             'aps' => array(
@@ -44,7 +50,7 @@ class Message implements Interfaces\MessageInterface{
                  'url-args' => array(
                         $this->uri
                  ),
-                 'sound' => 'default'
+                 'sound' => $this->sound
             )
         );
         return json_encode($payload);
