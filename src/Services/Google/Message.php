@@ -52,7 +52,7 @@ class Message implements Interfaces\MessageInterface{
                 'sound'=>1,
                 'vibrate'=>1,
                 'uri' => $this->uri,
-                'notId' => time(),
+                'notId' => 1,
                 'json' => $this->json
             ),
             'registration_ids' => array($this->token)
