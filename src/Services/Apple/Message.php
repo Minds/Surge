@@ -8,6 +8,9 @@ use Surge\Components\Interfaces;
 
 class Message implements Interfaces\MessageInterface{
 
+    public $bigPicture;
+    public $group;
+    public $largeIcon;
     public $title;
     public $message;
     public $token;
@@ -15,6 +18,21 @@ class Message implements Interfaces\MessageInterface{
     public $uri = "chat";
     public $sound = "default";
     public $json = "";
+
+    public function setGroup($group) {
+        $this->group = $group;
+        return $this;
+    }
+
+    public function setBigPicture($bigPicture) {
+        $this->bigPicture = $bigPicture;
+        return $this;
+    }
+
+    public function setLargeIcon($icon) {
+        $this->largeIcon = $icon;
+        return $this;
+    }
 
     public function setToken($token){
         $this->token = $token;
