@@ -7,6 +7,13 @@ namespace Surge\Components\Interfaces;
 interface MessageInterface {
 
     /**
+     * Set badge
+     * @param string $badge
+     * @return $this
+     */
+    public function setBadge($badge);
+
+    /**
      * Set the group
      * @param string $group
      * @return $this

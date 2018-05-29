@@ -8,6 +8,7 @@ use Surge\Components\Interfaces;
 
 class Message implements Interfaces\MessageInterface{
 
+    public $badge;
     public $bigPicture;
     public $group;
     public $largeIcon;
@@ -18,6 +19,11 @@ class Message implements Interfaces\MessageInterface{
     public $uri = "chat";
     public $sound = "default";
     public $json = "";
+
+    public function setBadge($badge) {
+        $this->badge = $badge;
+        return $this;
+    }
 
     public function setGroup($group) {
         $this->group = $group;
@@ -70,12 +76,13 @@ class Message implements Interfaces\MessageInterface{
                 'alert' => array(
                     'title' => $this->title ,
                     'body' => $this->message,
-                 ),
-                 'url-args' => array(
+                ),
+                'badge' => $this->badge,
+                'url-args' => array(
                         $this->uri
-                 ),
-                 'sound' => $this->sound,
-                 'json' => $this->json
+                ),
+                'sound' => $this->sound,
+                'json' => $this->json
             )
         );
         return json_encode($payload);
