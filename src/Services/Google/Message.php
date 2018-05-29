@@ -9,6 +9,7 @@ use Surge\Components\Interfaces;
 class Message implements Interfaces\MessageInterface{
 
     public $bigPicture;
+    public $badge;
     public $group;
     public $largeIcon;
     public $title;
@@ -17,6 +18,11 @@ class Message implements Interfaces\MessageInterface{
     public $service = "Google";
     public $uri;
     public $json = "";
+
+    public function setBadge($badge) {
+        $this->badge = $badge;
+        return $this;
+    }
 
     public function setGroup($group) {
         $this->group = $group;
@@ -74,7 +80,8 @@ class Message implements Interfaces\MessageInterface{
                 'notId' => 1,
                 'json' => $this->json,
                 'largeIcon' => $this->largeIcon,
-                'bigPicture' => $this->bigPicture
+                'bigPicture' => $this->bigPicture,
+                'badge' => intval($this->badge)
             ),
             'registration_ids' => array($this->token)
         );
