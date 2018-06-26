@@ -5,7 +5,7 @@
 namespace Surge\Services\Apple\Helpers;
 
 class Common{
- 
+
     /**
      * Return the binary data that apple wants
      */
@@ -14,9 +14,8 @@ class Common{
                 chr(0).
                 chr(32).
                 pack('H*', $token).
-                chr(0).chr(strlen($json)).
+                pack('n', strlen($json)).
                 $json;
     }
-            
+
 }
-    
