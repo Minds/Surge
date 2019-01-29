@@ -32,7 +32,7 @@ class Apple implements Interfaces\ServiceInterface{
             
         if(!$stream){
             var_dump($err, $errstr);
-            exit;   
+            //exit;   
         }
 
         $result = fwrite($stream, $message, strlen($message));
