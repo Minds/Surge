@@ -9,7 +9,7 @@ use Surge\Components\Interfaces;
 class Google implements Interfaces\ServiceInterface{
 
     private $api_key;
-    private $host = 'https://android.googleapis.com/gcm/send';
+    private $host = 'https://fcm.googleapis.com/fcm/send';
 
     public function __construct($options = array()){
         if(isset($options['api_key']))
