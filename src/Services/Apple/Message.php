@@ -83,7 +83,8 @@ class Message implements Interfaces\MessageInterface{
                 ),
                 'sound' => $this->sound,
                 'json' => $this->json
-            )
+            ),
+            'uri' => $this->uri
         );
         return json_encode($payload);
     }
