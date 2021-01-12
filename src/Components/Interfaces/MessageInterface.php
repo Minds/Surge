@@ -4,7 +4,35 @@
  */
 namespace Surge\Components\Interfaces;
 
-interface MessageInterface{
+interface MessageInterface {
+
+    /**
+     * Set badge
+     * @param string $badge
+     * @return $this
+     */
+    public function setBadge($badge);
+
+    /**
+     * Set the group
+     * @param string $group
+     * @return $this
+     */
+    public function setGroup($group);
+
+    /**
+     * Set the big picture
+     * @param string $bigPicture
+     * @return $this
+     */
+    public function setBigPicture($bigPicture);
+
+    /**
+     * Set the large icon
+     * @param string $icon
+     * @return $this
+     */
+    public function setLargeIcon($icon);
 
     /**
      * Set the device token
