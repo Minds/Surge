@@ -1,7 +1,12 @@
 {
-	"name": "Minds/Surge",
-	"description": "A php library for sending push notifications",
-    "autoload": {
-       "psr-4": { "Surge\\": "src/" }
+  "name": "Minds/Surge",
+  "description": "A php library for sending push notifications",
+  "autoload": {
+    "psr-4": {
+      "Surge\\": "src/"
     }
+  },
+  "require": {
+    "minishlink/web-push": "~4.0.2"
+  }
 }
